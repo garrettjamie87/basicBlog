@@ -28,6 +28,8 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
   res.render("home", {
     startingContent: homeStartingContent,
+    posts: postArr
+
   });
 });
 
@@ -50,7 +52,7 @@ app.get("/compose", function (req, res) {
 app.post("/compose", function (req, res) {
   const titulo = req.body.postTitle;
   const cuerpo = req.body.postBody 
-  var post = {
+  const post = {
    title: titulo,
    body: cuerpo
   }
