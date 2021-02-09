@@ -14,6 +14,8 @@ const contactContent =
 
 const app = express();
 
+const postArr = [];
+
 app.set("view engine", "ejs");
 
 app.use(
@@ -46,10 +48,19 @@ app.get("/compose", function (req, res) {
 });
 
 app.post("/compose", function (req, res) {
-  const dog = req.body.postTitle;
-  console.log(dog);
+  const titulo = req.body.postTitle;
+  const cuerpo = req.body.postBody 
+  var post = {
+   title: titulo,
+   body: cuerpo
+  }
+  
+  postArr.push(post);
   res.redirect('/');
+ 
 });
+
+
 
 app.listen(3000, function () {
   console.log("Server started on port 3000");
