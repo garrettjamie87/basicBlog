@@ -48,6 +48,7 @@ app.get("/compose", function (req, res) {
 app.post("/compose", function (req, res) {
   const dog = req.body.postTitle;
   console.log(dog);
+  res.redirect('/');
 });
 
 app.listen(3000, function () {
