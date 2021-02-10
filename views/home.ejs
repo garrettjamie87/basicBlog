@@ -1,7 +1,8 @@
 <%- include('./partials/header.ejs'); -%>
 <h1>Hello!</h1>
 <p><%=startingContent%></p>
-<% console.log(posts);%> <% for(let i = 0; i < posts.length; i++){ %> <%
-console.log(posts[i].title) };%> 
+<% console.log(posts);%>
+
+<%posts.forEach(el => console.log(el.title))%>
 
 <%- include('./partials/footer.ejs'); -%>
