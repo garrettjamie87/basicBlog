@@ -62,8 +62,9 @@ app.post("/compose", function (req, res) {
 
 app.get("/posts/:postName", function (req, res) {
   const requestedTitle = _.lowerCase(req.params.postName);
-  postArr.map((x) => {
-    if(requestedTitle === x.title) {
+  postArr.forEach(function(x){
+    const storedTitle = _.lowerCase(x.title);
+    if (storedTitle===requestedTitle) {
       res.render("post", {
         title: x.title,
         content: x.body
